@@ -11,9 +11,4 @@ public class bbm {
         System.out.println("Nama BBM        : " + namaBBM);
         System.out.println("Harga per Liter : " + hargaPerLiter);
     }
-
-    public static void main(String[] args) {
-        BBM bbm = new BBM("namaBBM", Harga);
-        bbm.tampilkanInformasi();
-    }
 }

@@ -14,9 +14,4 @@ public class kendaraan {
         System.out.println("Tipe       : " + tipe);
         System.out.println("Merk       : " + merk);
     }
-
-    public static void main(String[] args) {
-        Kendaraan k = new Kendaraan("plat", "tipe", "merk");
-        k.tampilkanInformasi();
-    }
 }
