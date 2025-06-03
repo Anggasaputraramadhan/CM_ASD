@@ -16,7 +16,7 @@ public class kendaraan {
     }
 
     public static void main(String[] args) {
-        Kendaraan k = new Kendaraan("B1234XYZ", "Motor", "Honda");
+        Kendaraan k = new Kendaraan("plat", "tipe", "merk");
         k.tampilkanInformasi();
     }
 }

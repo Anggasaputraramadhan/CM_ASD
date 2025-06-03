@@ -13,7 +13,7 @@ public class bbm {
     }
 
     public static void main(String[] args) {
-        BBM bbm = new BBM("Pertalite", 10000);
+        BBM bbm = new BBM("namaBBM", Harga);
         bbm.tampilkanInformasi();
     }
 }

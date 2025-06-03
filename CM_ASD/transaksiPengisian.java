@@ -23,7 +23,7 @@ public class transaksiPengisian {
     }
 
     public static void main(String[] args) {
-        Kendaraan k = new Kendaraan("B1234XYZ", "Mobil", "Toyota");
+        kendaraan k = new kendaraan("12345678", "Mobil", "Toyota");
         BBM bbm = new BBM("Pertamax", 13500);
         TransaksiPengisian tp = new TransaksiPengisian(k, bbm, 10);
         tp.tampilkanInformasi();
