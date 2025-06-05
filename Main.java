@@ -14,6 +14,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         DoubleLinkedList24 list = new DoubleLinkedList24();
+        Queue x = new Queue(100); 
         int pilihan;
 
         do {
@@ -40,9 +41,31 @@ public class Main {
                 break;
 
             case 4:
+             if (list.isEmpty()) {
+                System.out.println("Tidak ada kendaraan dalam antrian");
                 break;
-
+            }
+            Kendaraan kendaraanDilayani = list.head.data;
+            list.layaniKendaraan();
+            System.out.print("Masukkan Jenis BBM: ");
+            String jenisBBM = input.nextLine();
+            System.out.print("Masukkan Harga per liter: ");
+            double hargaPerLiter = input.nextDouble();
+            System.out.print("Masukkan Jumlah liter: ");
+            double jumlahLiter = input.nextDouble();
+            input.nextLine();
+            BBM bbm = new BBM(jenisBBM, hargaPerLiter);
+            TransaksiPengisian transaksi = new TransaksiPengisian(kendaraanDilayani, bbm, jumlahLiter);
+            x.enqueue(kendaraanDilayani.platNomor, "Rp " + transaksi.totalBayar);
+            System.out.println(">> Transaksi berhasil dicatat.");
+                break;
             case 5:
+               System.out.println("\n-- Riwayat Transaksi --");
+                System.out.println("Daftar Transaksi:");
+                for (int i = 0; i < x.size; i++) {
+                    int index = (x.front + i) % x.max;
+                    System.out.println(x.plat[index] + ": " + x.totalHarga[index]);
+                }
                 break;
 
             case 0:

@@ -84,7 +84,22 @@ class DoubleLinkedList24 {
                 current = current.next;
             }
         }
-    }   
+    }
+    
+    void layaniKendaraan() {
+        if (isEmpty()) {
+            System.out.println("tdk ada kendaraan dalam antrian");
+            return;
+        }
+        Kendaraan datalayani = head.data;
+        System.out.println("Petugas melayani " + datalayani.platNomor);
+        if (head == tail) {
+            head = tail = null;
+        } else {
+            head = head.next;
+            head.prev = null;
+        }
+    }
 
     void removeFirst() {
         if(isEmpty()) {
