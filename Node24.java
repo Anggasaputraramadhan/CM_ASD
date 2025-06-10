@@ -10,6 +10,8 @@ public class Node24 {
     }
 }
 
+//class node diatas buat nyimpen node
+
 class DoubleLinkedList24 {
     Node24 head;
     Node24 tail;
@@ -76,37 +78,4 @@ class DoubleLinkedList24 {
             head.prev = null;
         }
     }
-
-    void getIndex(int index) {
-        if (index < 0 || isEmpty()) {
-            System.out.println("Indeks tidak valid atau list kosong.");
-            return;
-        }
-    
-        Node24 current = head;
-        int count = 0;
-        while (current != null && count < index) {
-            current = current.next;
-            count++;
-        }
-    
-        if (current == null) {
-            System.out.println("Indeks melebihi jumlah node.");
-        } else {
-            System.out.println("Data pada indeks " + index + ":");
-            current.data.tampilkanInformasi();
-        }
-    }
-
-    int size() {
-        int count = 0;
-        Node24 current = head;
-        while (current != null) {
-            count++;
-            current = current.next;
-        }
-        return count;
-    }
-    
-    
 }
