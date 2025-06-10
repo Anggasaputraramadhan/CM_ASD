@@ -38,6 +38,7 @@ public class Main {
                 list.print();
                 break;
             case 3:
+                list.totalAntrian();
                 break;
 
             case 4:

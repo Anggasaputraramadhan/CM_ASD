@@ -47,6 +47,20 @@ class DoubleLinkedList24 {
             }
         }
     }
+
+    void totalAntrian() {
+        if (isEmpty()) {
+            System.out.println("Belum Ada Antrian" );
+        } else {
+            int total = 0;
+            Node24 current = head;
+            System.out.println("== Isi Kendaraan ==\nAntrian Kendaraan:");
+            while (current != null) {
+                total++;
+            }
+            System.out.println("Total Antrian : " + total);
+        }
+    }
     
     void layaniKendaraan() {
         if (isEmpty()) {
