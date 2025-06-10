@@ -54,9 +54,9 @@ class DoubleLinkedList24 {
         } else {
             int total = 0;
             Node24 current = head;
-            System.out.println("== Isi Kendaraan ==\nAntrian Kendaraan:");
             while (current != null) {
                 total++;
+                current = current.next;
             }
             System.out.println("Total Antrian : " + total);
         }
