@@ -65,10 +65,6 @@ class DoubleLinkedList24 {
     }
     
     void layaniKendaraan() {
-        if (isEmpty()) {
-            System.out.println("tdk ada kendaraan dalam antrian");
-            return;
-        }
         Kendaraan datalayani = head.data;
         System.out.println("Petugas melayani " + datalayani.platNomor);
         if (head == tail) {
