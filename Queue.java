@@ -1,39 +1,29 @@
-public class Queue {
+class Queue {
+    int max, size, front, rear;
     String[] plat;
+    String[] namaBBM;
     String[] totalHarga;
-    int front, rear, size;
-    int max;
-    public Queue(int max) {
-        this.max = max;
-        this.plat = new String[max];
-        this.totalHarga = new String[max];
-        this.front = 0;
-        this.rear = -1;
-        this.size = 0;
+
+    public Queue(int n) {
+        max = n;
+        size = 0;
+        front = rear = 0;
+        plat = new String[max];
+        namaBBM = new String[max];
+        totalHarga = new String[max];
     }
-    public boolean isEmpty() {
-        if (size == 0) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-    public boolean isFull() {
-        if (size == max) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-    public void enqueue(String plat, String totalHarga) {
-    if (isFull()) {
-        System.out.println("Antrian penuh.");
+
+    public void enqueue(String platNomor, String namaBBM, String totalHarga) {
+    if (size == max) {
+        System.out.println("Antrian penuh!");
         return;
     }
-    rear = (rear + 1) % max;
-    this.plat[rear] = plat;
+    this.plat[rear] = platNomor;
+    this.namaBBM[rear] = namaBBM;
     this.totalHarga[rear] = totalHarga;
+    rear = (rear + 1) % max;
     size++;
 }
 
-}
+    }
+

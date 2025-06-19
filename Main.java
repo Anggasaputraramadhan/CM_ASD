@@ -57,15 +57,18 @@ public class Main {
                 input.nextLine();
                 BBM bbm = new BBM(jenisBBM, hargaPerLiter);
                 TransaksiPengisian transaksi = new TransaksiPengisian(kendaraanDilayani, bbm, jumlahLiter);
-                x.enqueue(kendaraanDilayani.platNomor, "Rp " + transaksi.totalBayar);
+                x.enqueue(kendaraanDilayani.platNomor,jenisBBM, "Rp " + transaksi.totalBayar);
                 System.out.println(">> Transaksi berhasil dicatat.");
                 break;
             case 5:
+                BBM bbm2;
                 System.out.println("\n-- Riwayat Transaksi --");
                 System.out.println("Daftar Transaksi:");
                 for (int i = 0; i < x.size; i++) {
                     int index = (x.front + i) % x.max;
-                    System.out.println(x.plat[index] + ": " + x.totalHarga[index]);
+                    if (x.namaBBM[index].equalsIgnoreCase("pertalite")) {
+                        System.out.println(x.plat[index] + ": " + x.totalHarga[index]);
+                    }
                 }
                 break;
 

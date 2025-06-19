@@ -74,4 +74,36 @@ class DoubleLinkedList24 {
             head.prev = null;
         }
     }
+
+    void deleteAntrianKey(){
+        if (isEmpty()) {
+            System.out.println("Linked list masih kosong.");
+            return;
+        }
+        System.out.print("Masukkan plat nomor kendaraan yang ingin dihapus: ");
+        String platNomor = new java.util.Scanner(System.in).nextLine();
+        Node24 current = head;
+        while (current != null) {
+            if (current.data.platNomor.equals(platNomor)) {
+                if (current == head) {
+                    head = current.next;
+                    if (head != null) {
+                        head.prev = null;
+                    } else {
+                        tail = null;
+                    }
+                } else if (current == tail) {
+                    tail = current.prev;
+                    tail.next = null;
+                } else {
+                    current.prev.next = current.next;
+                    current.next.prev = current.prev;
+                }
+                System.out.println("Kendaraan dengan plat nomor " + platNomor + " telah dihapus.");
+                return;
+            }
+            current = current.next;
+        }
+        System.out.println("Kendaraan dengan plat nomor " + platNomor + " tidak ditemukan.");
+    }
 }
